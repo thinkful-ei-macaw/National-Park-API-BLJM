@@ -12,7 +12,7 @@
 
 	<form class="form">
 		<fieldset>
-			<select name="state" id="search-state-1">
+      <select name="state" id="search-state-0">
 	      <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
         <option value="AZ">Arizona</option>
@@ -64,8 +64,11 @@
         <option value="WV">West Virginia</option>
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
-      </select>			
-      <select name="state" id="search-state-2">
+      </select>
+      </br>
+    <input type="number" name="max-results" id="np-max-results-0" value="10">
+    <label for="max-results">Max Results</label>
+    <select name="state" id="search-state-1">
 	      <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
         <option value="AZ">Arizona</option>
@@ -117,13 +120,20 @@
         <option value="WV">West Virginia</option>
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
-      </select>	
+      </select>
+      </br>
+    <input type="number" name="max-results" id="np-max-results-1" value="10">
+    <label for="max-results">Max Results</label>
+    
+    
     </fieldset>
-    <label for="max-results">Maximum results to return</label>
-    <input type="number" name="max-results" id="np-max-results" value="10">
-    <input type="submit" value="Search">
+    <input type="submit" value="Search" id="search">
     <input type="reset">
   </form>
+
+  <div class="results">
+  </div>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="index.js"></script>
