@@ -20,6 +20,13 @@ function submitButton() {
   });
 }
 
+function resetButton() {
+  $('.form').on('click', '#reset', event => {
+    event.preventDefault();
+    $('.results').html(' ');
+  });
+}
+
 function createContent(){
   for(let i = 0; i < 2; i++) {
     let inputVal = $(`#search-state-${i}`).val();
@@ -29,15 +36,25 @@ function createContent(){
   }
 }
 
+
+
 function displayResults(newResponse, i){
   let name = newResponse.data[i].fullName;
   let descript = newResponse.data[i].description;
   let link = newResponse.data[i].url;
+  let latLong = newResponse.data[i].latLong.split(',');
+  let lat = latLong[0].substring(4, 12);
+  let long = latLong[1].substring(6, 14);
 
   $('.results').append(`
   <h3>${name}</h3>
   <p>${descript}</p>
   <a href="${link}">${link}</a>
+  </br>
+  <p>Location</p>
+  <a href="https://gps-coordinates.org/my-location.php?lat=${lat.slice(0,6)}&lng=${long}" target="_blank">(${lat},${long})</a>
   `);
+
 }
+resetButton();
 submitButton();
