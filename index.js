@@ -28,7 +28,7 @@ function resetButton() {
 }
 
 function createContent(){
-  for(let i = 0; i < 2; i++) {
+  for(let i = 0; i < 1; i++) {
     let inputVal = $(`#search-state-${i}`).val();
     //let inputVal2 = $('#search-state-2').val();
     let maxResults = $(`#np-max-results-${i}`).val();
